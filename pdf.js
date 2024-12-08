@@ -28,34 +28,32 @@ document.body.appendChild(downloadButton);
 
 downloadButton.addEventListener('click', downloadPageAsPDF);
 
-// Crear botón dinámico (solo el de la derecha)
-const languageButtonToEnglish = document.createElement('button');
-languageButtonToEnglish.textContent = 'Cambiar a Inglés';
-languageButtonToEnglish.style.position = 'fixed';
-languageButtonToEnglish.style.top = '50px';
-languageButtonToEnglish.style.right = '10px';
-languageButtonToEnglish.style.padding = '10px 15px';
-languageButtonToEnglish.style.backgroundColor = '#28A745';
-languageButtonToEnglish.style.color = 'white';
-languageButtonToEnglish.style.border = 'none';
-languageButtonToEnglish.style.borderRadius = '5px';
-languageButtonToEnglish.style.cursor = 'pointer';
-languageButtonToEnglish.style.zIndex = '1000';
-document.body.appendChild(languageButtonToEnglish);
+// Crear el botón dinámico en la parte derecha
+const languageButtonToEnglishDynamic = document.createElement('button');
+languageButtonToEnglishDynamic.textContent = 'Cambiar a Inglés';
+languageButtonToEnglishDynamic.style.position = 'fixed';
+languageButtonToEnglishDynamic.style.top = '50px';
+languageButtonToEnglishDynamic.style.right = '10px';
+languageButtonToEnglishDynamic.style.padding = '10px 15px';
+languageButtonToEnglishDynamic.style.backgroundColor = '#28A745';
+languageButtonToEnglishDynamic.style.color = 'white';
+languageButtonToEnglishDynamic.style.border = 'none';
+languageButtonToEnglishDynamic.style.borderRadius = '5px';
+languageButtonToEnglishDynamic.style.cursor = 'pointer';
+languageButtonToEnglishDynamic.style.zIndex = '1000';
+document.body.appendChild(languageButtonToEnglishDynamic);
 
 // Función para cambiar a inglés dinámicamente
 function switchToEnglish() {
-  const basePath = window.location.origin + window.location.pathname.split('/')[1];
-  window.location.href = `${basePath}/english/index.html`;
+  window.location.href = "/english/index.html";
 }
 
-// Vincular evento solo al botón dinámico
-languageButtonToEnglish.addEventListener('click', switchToEnglish);
+// Asignar el evento de clic al botón dinámico
+languageButtonToEnglishDynamic.addEventListener('click', switchToEnglish);
 
-// Eliminar solo el botón dinámico de la derecha, pero **NO el de la izquierda**
+// Eliminar el botón dinámico de la derecha después de agregarlo
 setTimeout(() => {
-  const dynamicButton = document.querySelector('button[style*="right: 10px"]');
-  if (dynamicButton) {
-    dynamicButton.remove(); // Solo elimina el botón dinámico que tiene right: 10px
+  if (languageButtonToEnglishDynamic) {
+    languageButtonToEnglishDynamic.remove();
   }
-}, 0);
+}, 10); // Retraso mínimo para asegurarse de que se haya agregado antes de eliminarlo
