@@ -9,42 +9,31 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- Función para descargar la página como PDF -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
-  <script>
-    function downloadPageAsPDF() {
-      const element = document.body; 
-      const options = {
-        margin: 1,
-        filename: 'pagina-web.pdf',
-        image: { type: 'jpeg', quality: 0.98 },
-        html2canvas: { scale: 2 },
-        jsPDF: { unit: 'cm', format: 'a4', orientation: 'portrait' }
-      };
-      html2pdf().set(options).from(element).save();
-    }
-
-    const downloadButton = document.createElement('button');
-    downloadButton.textContent = 'Descargar como PDF';
-    downloadButton.style.position = 'fixed';
-    downloadButton.style.top = '10px';
-    downloadButton.style.right = '10px';
-    downloadButton.style.padding = '10px 15px';
-    downloadButton.style.backgroundColor = '#007BFF';
-    downloadButton.style.color = 'white';
-    downloadButton.style.border = 'none';
-    downloadButton.style.borderRadius = '5px';
-    downloadButton.style.cursor = 'pointer';
-    downloadButton.style.zIndex = '1000';
-    document.body.appendChild(downloadButton);
-
-    downloadButton.addEventListener('click', downloadPageAsPDF);
-  </script>
+  <!-- Botón para cambiar al inglés -->
+  <button id="toEnglish" style="
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    padding: 10px 15px;
+    background-color: #28A745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  ">Cambiar a Inglés</button>
 
   <!-- Encabezado con navegación -->
   <header>
     <h1>Web4U</h1>
     <p>Aprende HTML, SVG y CSS con ejemplos y recursos.</p>
+    <nav>
+      <ul>
+        <li><a href="index.html" class="active">Inicio</a></li>
+        <li><a href="HTML.html">HTML</a></li>
+        <li><a href="SVG.html">SVG</a></li>
+        <li><a href="CSS.html">CSS</a></li>
+      </ul>
+    </nav>
   </header>
 
   <!-- Sección principal -->
@@ -72,9 +61,23 @@
     </section>
   </main>
 
-  <!-- Pie de página con enlace a la versión en inglés -->
+  <!-- Pie de página con opción de cambiar idioma -->
   <footer>
     <p>© Victor Medel Martin Web4U | <a href="english/index.html" title="Cambiar al inglés">English</a></p>
   </footer>
+
+  <!-- JavaScript para el cambio de idioma -->
+  <script>
+    const toEnglishButton = document.getElementById('toEnglish');
+    
+    toEnglishButton.addEventListener('click', () => {
+      window.location.href = "english/index.html";
+    });
+  </script>
+
+  <!-- Enlace a pdf.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+  <script src="pdf.js"></script>
 </body>
 </html>
+
