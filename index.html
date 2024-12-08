@@ -9,30 +9,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- Verificamos si no estamos en la versión inglesa -->
-  <script>
-    if (window.location.pathname === "/Vmm06.github.io/") {
-      const button = document.createElement('button');
-      button.textContent = "Cambiar a Inglés";
-      button.style.position = "fixed";
-      button.style.top = "10px";
-      button.style.left = "10px";
-      button.style.padding = "10px 15px";
-      button.style.backgroundColor = "#28A745";
-      button.style.color = "white";
-      button.style.border = "none";
-      button.style.borderRadius = "5px";
-      button.style.cursor = "pointer";
-      button.style.zIndex = "1000";
-
-      document.body.appendChild(button);
-
-      button.addEventListener('click', function() {
-        window.location.href = "/Vmm06.github.io/english/index.html";
-      });
-    }
-  </script>
-
   <header>
     <h1>Web4U</h1>
     <p>Aprende HTML, SVG y CSS con ejemplos y recursos.</p>
@@ -70,11 +46,31 @@
   </main>
 
   <footer>
-    <p>© Victor Medel Martin Web4U | <a href="english/index.html" title="Cambiar al inglés">English</a></p>
+    <p>© Victor Medel Martin Web4U</p>
   </footer>
 
   <!-- Enlace a pdf.js -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
-  <script src="pdf.js"></script>
-</body>
-</html>
+  <script>
+    // Función de descarga como PDF
+    function downloadPageAsPDF() {
+      const element = document.body; 
+      const options = {
+        margin: 1,
+        filename: 'pagina-web.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: 'cm', format: 'a4', orientation: 'portrait' }
+      };
+      html2pdf().set(options).from(element).save();
+    }
+
+    // Botón de descarga como PDF
+    const downloadButton = document.createElement('button');
+    downloadButton.textContent = 'Descargar como PDF';
+    downloadButton.style.position = 'fixed';
+    downloadButton.style.top = '10px';
+    downloadButton.style.right = '10px';
+    downloadButton.style.padding = '10px 15px';
+ 
+
