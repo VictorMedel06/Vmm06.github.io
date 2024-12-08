@@ -45,7 +45,7 @@ document.body.appendChild(languageButtonToEnglish);
 
 // Función para cambiar la página a inglés
 function switchToEnglish() {
-  window.location.href = "/english/index%20english.html"; // Ruta con codificación segura para GitHub Pages
+  window.location.href = `${window.location.origin}/Vmm06.github.io/english/index.html`;
 }
 
 // Botón para regresar a la versión en español
@@ -65,7 +65,7 @@ document.body.appendChild(languageButtonToSpanish);
 
 // Función para regresar a la página en español
 function switchToSpanish() {
-  window.location.href = "/index.html"; // Ruta segura para regresar a la página principal
+  window.location.href = `${window.location.origin}/Vmm06.github.io/index.html`;
 }
 
 // Vincular los botones con sus funciones
