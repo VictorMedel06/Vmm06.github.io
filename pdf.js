@@ -1,36 +1,12 @@
-// Asegúrate de incluir la biblioteca html2pdf.js en tu proyecto.
-// Puedes añadirla con un enlace CDN:
-// <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
-
-// Función para descargar la página como PDF
-function downloadPageAsPDF() {
-  const element = document.body; // Seleccionar todo el contenido de la página
-  const options = {
-    margin: 1,
-    filename: 'pagina-web.pdf',
-    image: { type: 'jpeg', quality: 0.98 },
-    html2canvas: { scale: 2 },
-    jsPDF: { unit: 'cm', format: 'a4', orientation: 'portrait' }
-  };
-  html2pdf().set(options).from(element).save();
+// Función para cambiar a la versión en inglés
+function switchToEnglish() {
+  window.location.href = "./english/index.html"; // Ruta relativa correcta
 }
 
-// Crear un botón de descarga PDF
-const downloadButton = document.createElement('button');
-downloadButton.textContent = 'Descargar como PDF';
-downloadButton.style.position = 'fixed';
-downloadButton.style.top = '10px';
-downloadButton.style.right = '10px';
-downloadButton.style.padding = '10px 15px';
-downloadButton.style.backgroundColor = '#007BFF';
-downloadButton.style.color = 'white';
-downloadButton.style.border = 'none';
-downloadButton.style.borderRadius = '5px';
-downloadButton.style.cursor = 'pointer';
-downloadButton.style.zIndex = '1000';
-document.body.appendChild(downloadButton);
-
-downloadButton.addEventListener('click', downloadPageAsPDF);
+// Función para regresar a la versión en español
+function switchToSpanish() {
+  window.location.href = "./index.html"; // Ruta relativa correcta
+}
 
 // Crear un botón para cambiar a la versión en inglés
 const languageButtonToEnglish = document.createElement('button');
@@ -47,11 +23,6 @@ languageButtonToEnglish.style.cursor = 'pointer';
 languageButtonToEnglish.style.zIndex = '1000';
 document.body.appendChild(languageButtonToEnglish);
 
-// Función para cambiar a la versión en inglés
-function switchToEnglish() {
-  window.location.href = "/english/index english.html"; // Ruta actualizada para coincidir con tu estructura de carpetas
-}
-
 // Crear un botón para regresar a la versión en español
 const languageButtonToSpanish = document.createElement('button');
 languageButtonToSpanish.textContent = 'Cambiar a Español';
@@ -67,10 +38,9 @@ languageButtonToSpanish.style.cursor = 'pointer';
 languageButtonToSpanish.style.zIndex = '1000';
 document.body.appendChild(languageButtonToSpanish);
 
-// Función para regresar a la versión en español
-function switchToSpanish() {
-  window.location.href = "/index.html"; // Ruta para la versión en español
-}
+// Vincular los botones con sus funciones
+languageButtonToEnglish.addEventListener('click', switchToEnglish);
+languageButtonToSpanish.addEventListener('click', switchToSpanish);
 
 // Vincular los botones con sus funciones
 languageButtonToEnglish.addEventListener('click', switchToEnglish);
