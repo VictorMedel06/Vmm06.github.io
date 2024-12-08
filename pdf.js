@@ -1,7 +1,3 @@
-// Asegúrate de incluir la biblioteca html2pdf.js en tu proyecto.
-// Puedes añadirla con un enlace CDN si no lo has hecho en el HTML:
-// <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
-
 // Función para descargar la página como PDF
 function downloadPageAsPDF() {
   const element = document.body; // Seleccionar todo el contenido de la página
@@ -32,7 +28,7 @@ document.body.appendChild(downloadButton);
 
 downloadButton.addEventListener('click', downloadPageAsPDF);
 
-// Crear un botón para cambiar a la versión en inglés
+// Botón para cambiar a la versión en inglés
 const languageButtonToEnglish = document.createElement('button');
 languageButtonToEnglish.textContent = 'Cambiar a Inglés';
 languageButtonToEnglish.style.position = 'fixed';
@@ -47,13 +43,12 @@ languageButtonToEnglish.style.cursor = 'pointer';
 languageButtonToEnglish.style.zIndex = '1000';
 document.body.appendChild(languageButtonToEnglish);
 
-// Función para cambiar a la versión en inglés
+// Función para cambiar la página a inglés
 function switchToEnglish() {
-  // Codificando el espacio correctamente para GitHub Pages
-  window.location.href = "/english/index%20english.html";
+  window.location.href = "/english/index%20english.html"; // Ruta con codificación segura para GitHub Pages
 }
 
-// Crear un botón para regresar a la versión en español
+// Botón para regresar a la versión en español
 const languageButtonToSpanish = document.createElement('button');
 languageButtonToSpanish.textContent = 'Regresar a Español';
 languageButtonToSpanish.style.position = 'fixed';
@@ -68,12 +63,12 @@ languageButtonToSpanish.style.cursor = 'pointer';
 languageButtonToSpanish.style.zIndex = '1000';
 document.body.appendChild(languageButtonToSpanish);
 
-// Función para regresar a la versión en español
+// Función para regresar a la página en español
 function switchToSpanish() {
-  window.location.href = "/index.html";
+  window.location.href = "/index.html"; // Ruta segura para regresar a la página principal
 }
 
-// Vincular los botones con sus acciones correspondientes
+// Vincular los botones con sus funciones
 languageButtonToEnglish.addEventListener('click', switchToEnglish);
 languageButtonToSpanish.addEventListener('click', switchToSpanish);
 
