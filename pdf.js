@@ -49,14 +49,6 @@ function switchToEnglish() {
   window.location.href = `${basePath}/english/index.html`;
 }
 
-
-
-// Función para regresar a español dinámicamente
-function switchToSpanish() {
-  const basePath = window.location.origin + window.location.pathname.split('/')[1];
-  window.location.href = `${basePath}/index.html`;
-}
-
 // Vincular eventos
 languageButtonToEnglish.addEventListener('click', switchToEnglish);
-languageButtonToSpanish.addEventListener('click', switchToSpanish);
+
