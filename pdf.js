@@ -32,7 +32,7 @@ document.body.appendChild(downloadButton);
 
 downloadButton.addEventListener('click', downloadPageAsPDF);
 
-// Verificar que estamos en index.html
+// Comprobación para asegurarnos de que solo el botón de la izquierda se renderiza en index.html
 if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
   // Crear el botón para cambiar a inglés en el lado izquierdo
   const languageButtonToEnglish = document.createElement('button');
@@ -57,4 +57,3 @@ if (window.location.pathname === '/' || window.location.pathname === '/index.htm
   // Vincular eventos
   languageButtonToEnglish.addEventListener('click', switchToEnglish);
 }
-
