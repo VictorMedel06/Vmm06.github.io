@@ -28,32 +28,48 @@ document.body.appendChild(downloadButton);
 
 downloadButton.addEventListener('click', downloadPageAsPDF);
 
-// Crear el botón dinámico en la parte derecha
-const languageButtonToEnglishDynamic = document.createElement('button');
-languageButtonToEnglishDynamic.textContent = 'Cambiar a Inglés';
-languageButtonToEnglishDynamic.style.position = 'fixed';
-languageButtonToEnglishDynamic.style.top = '50px';
-languageButtonToEnglishDynamic.style.right = '10px';
-languageButtonToEnglishDynamic.style.padding = '10px 15px';
-languageButtonToEnglishDynamic.style.backgroundColor = '#28A745';
-languageButtonToEnglishDynamic.style.color = 'white';
-languageButtonToEnglishDynamic.style.border = 'none';
-languageButtonToEnglishDynamic.style.borderRadius = '5px';
-languageButtonToEnglishDynamic.style.cursor = 'pointer';
-languageButtonToEnglishDynamic.style.zIndex = '1000';
-document.body.appendChild(languageButtonToEnglishDynamic);
+// Crear botón para cambiar a inglés
+const languageButtonToEnglish = document.createElement('button');
+languageButtonToEnglish.textContent = 'Cambiar a Inglés';
+languageButtonToEnglish.style.position = 'fixed';
+languageButtonToEnglish.style.top = '50px';
+languageButtonToEnglish.style.right = '10px';
+languageButtonToEnglish.style.padding = '10px 15px';
+languageButtonToEnglish.style.backgroundColor = '#28A745';
+languageButtonToEnglish.style.color = 'white';
+languageButtonToEnglish.style.border = 'none';
+languageButtonToEnglish.style.borderRadius = '5px';
+languageButtonToEnglish.style.cursor = 'pointer';
+languageButtonToEnglish.style.zIndex = '1000';
+document.body.appendChild(languageButtonToEnglish);
 
 // Función para cambiar a inglés dinámicamente
 function switchToEnglish() {
-  window.location.href = "/english/index.html";
+  const basePath = window.location.origin + window.location.pathname.split('/')[1];
+  window.location.href = `${basePath}/english/index.html`;
 }
 
-// Asignar el evento de clic al botón dinámico
-languageButtonToEnglishDynamic.addEventListener('click', switchToEnglish);
+// Crear botón para volver a español
+const languageButtonToSpanish = document.createElement('button');
+languageButtonToSpanish.textContent = 'Regresar a Español';
+languageButtonToSpanish.style.position = 'fixed';
+languageButtonToSpanish.style.top = '100px';
+languageButtonToSpanish.style.right = '10px';
+languageButtonToSpanish.style.padding = '10px 15px';
+languageButtonToSpanish.style.backgroundColor = '#FF0000';
+languageButtonToSpanish.style.color = 'white';
+languageButtonToSpanish.style.border = 'none';
+languageButtonToSpanish.style.borderRadius = '5px';
+languageButtonToSpanish.style.cursor = 'pointer';
+languageButtonToSpanish.style.zIndex = '1000';
+document.body.appendChild(languageButtonToSpanish);
 
-// Eliminar el botón dinámico de la derecha después de agregarlo
-setTimeout(() => {
-  if (languageButtonToEnglishDynamic) {
-    languageButtonToEnglishDynamic.remove();
-  }
-}, 10); // Retraso mínimo para asegurarse de que se haya agregado antes de eliminarlo
+// Función para regresar a español dinámicamente
+function switchToSpanish() {
+  const basePath = window.location.origin + window.location.pathname.split('/')[1];
+  window.location.href = `${basePath}/index.html`;
+}
+
+// Vincular eventos
+languageButtonToEnglish.addEventListener('click', switchToEnglish);
+languageButtonToSpanish.addEventListener('click', switchToSpanish);
