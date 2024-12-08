@@ -28,7 +28,7 @@ document.body.appendChild(downloadButton);
 
 downloadButton.addEventListener('click', downloadPageAsPDF);
 
-// Botón para cambiar a la versión en inglés
+// Crear botón para cambiar a inglés
 const languageButtonToEnglish = document.createElement('button');
 languageButtonToEnglish.textContent = 'Cambiar a Inglés';
 languageButtonToEnglish.style.position = 'fixed';
@@ -43,12 +43,13 @@ languageButtonToEnglish.style.cursor = 'pointer';
 languageButtonToEnglish.style.zIndex = '1000';
 document.body.appendChild(languageButtonToEnglish);
 
-// Función para cambiar la página a inglés
+// Función para cambiar a inglés dinámicamente
 function switchToEnglish() {
-  window.location.href = `${window.location.origin}/Vmm06.github.io/english/index.html`;
+  const basePath = window.location.origin + window.location.pathname.split('/')[1];
+  window.location.href = `${basePath}/english/index.html`;
 }
 
-// Botón para regresar a la versión en español
+// Crear botón para volver a español
 const languageButtonToSpanish = document.createElement('button');
 languageButtonToSpanish.textContent = 'Regresar a Español';
 languageButtonToSpanish.style.position = 'fixed';
@@ -63,12 +64,12 @@ languageButtonToSpanish.style.cursor = 'pointer';
 languageButtonToSpanish.style.zIndex = '1000';
 document.body.appendChild(languageButtonToSpanish);
 
-// Función para regresar a la página en español
+// Función para regresar a español dinámicamente
 function switchToSpanish() {
-  window.location.href = `${window.location.origin}/Vmm06.github.io/index.html`;
+  const basePath = window.location.origin + window.location.pathname.split('/')[1];
+  window.location.href = `${basePath}/index.html`;
 }
 
-// Vincular los botones con sus funciones
+// Vincular eventos
 languageButtonToEnglish.addEventListener('click', switchToEnglish);
 languageButtonToSpanish.addEventListener('click', switchToSpanish);
-
