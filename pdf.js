@@ -1,5 +1,5 @@
 function downloadPageAsPDF() {
-  const element = document.body; 
+  const element = document.body;
   const options = {
     margin: 1,
     filename: 'pagina-web.pdf',
@@ -10,6 +10,7 @@ function downloadPageAsPDF() {
   html2pdf().set(options).from(element).save();
 }
 
+// Botón de descarga como PDF
 const downloadButton = document.createElement('button');
 downloadButton.textContent = 'Descargar como PDF';
 downloadButton.style.position = 'fixed';
@@ -26,26 +27,34 @@ document.body.appendChild(downloadButton);
 
 downloadButton.addEventListener('click', downloadPageAsPDF);
 
-// Crear el botón de cambiar a inglés solo si estás en la página principal en español
-if (window.location.pathname === '/' || window.location.pathname === '/index.html' || window.location.pathname === '/Vmm06.github.io/') {
+// Crear botón de cambiar a inglés, solo si estás en la página principal en español
+document.addEventListener('DOMContentLoaded', function () {
+  const currentPath = window.location.pathname;
 
-  const languageButtonToEnglish = document.createElement('button');
-  languageButtonToEnglish.textContent = 'Cambiar a Inglés';
-  languageButtonToEnglish.style.position = 'fixed';
-  languageButtonToEnglish.style.top = '10px';
-  languageButtonToEnglish.style.left = '10px';
-  languageButtonToEnglish.style.padding = '10px 15px';
-  languageButtonToEnglish.style.backgroundColor = '#28A745';
-  languageButtonToEnglish.style.color = 'white';
-  languageButtonToEnglish.style.border = 'none';
-  languageButtonToEnglish.style.borderRadius = '5px';
-  languageButtonToEnglish.style.cursor = 'pointer';
-  languageButtonToEnglish.style.zIndex = '1000';
-  document.body.appendChild(languageButtonToEnglish);
+  if (
+    currentPath === '/' ||
+    currentPath === '/Vmm06.github.io/' ||
+    currentPath === '/Vmm06.github.io/index.html'
+  ) {
+    const languageButtonToEnglish = document.createElement('button');
+    languageButtonToEnglish.textContent = 'Cambiar a Inglés';
+    languageButtonToEnglish.style.position = 'fixed';
+    languageButtonToEnglish.style.top = '10px';
+    languageButtonToEnglish.style.left = '10px';
+    languageButtonToEnglish.style.padding = '10px 15px';
+    languageButtonToEnglish.style.backgroundColor = '#28A745';
+    languageButtonToEnglish.style.color = 'white';
+    languageButtonToEnglish.style.border = 'none';
+    languageButtonToEnglish.style.borderRadius = '5px';
+    languageButtonToEnglish.style.cursor = 'pointer';
+    languageButtonToEnglish.style.zIndex = '1000';
 
-  function switchToEnglish() {
-    window.location.href = "/english/index.html";
+    document.body.appendChild(languageButtonToEnglish);
+
+    function switchToEnglish() {
+      window.location.href = "/english/index.html";
+    }
+
+    languageButtonToEnglish.addEventListener('click', switchToEnglish);
   }
-
-  languageButtonToEnglish.addEventListener('click', switchToEnglish);
-}
+});
