@@ -28,7 +28,7 @@ document.body.appendChild(downloadButton);
 
 downloadButton.addEventListener('click', downloadPageAsPDF);
 
-// Crear el botón dinámico a la derecha
+// Crear botón dinámico (solo el de la derecha)
 const languageButtonToEnglish = document.createElement('button');
 languageButtonToEnglish.textContent = 'Cambiar a Inglés';
 languageButtonToEnglish.style.position = 'fixed';
@@ -49,15 +49,13 @@ function switchToEnglish() {
   window.location.href = `${basePath}/english/index.html`;
 }
 
-// Vincular evento al botón dinámico (derecha)
+// Vincular evento solo al botón dinámico
 languageButtonToEnglish.addEventListener('click', switchToEnglish);
 
-// **Eliminar solo el botón dinámico de la derecha**
+// Eliminar solo el botón dinámico de la derecha, pero **NO el de la izquierda**
 setTimeout(() => {
   const dynamicButton = document.querySelector('button[style*="right: 10px"]');
   if (dynamicButton) {
-    dynamicButton.remove(); // Solo eliminar el botón dinámico creado dinámicamente
+    dynamicButton.remove(); // Solo elimina el botón dinámico que tiene right: 10px
   }
-}, 0); // Ejecutar después de que la página se haya cargado por completo
-
-
+}, 0);
