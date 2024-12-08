@@ -73,3 +73,4 @@ function switchToSpanish() {
 // Vincular eventos
 languageButtonToEnglish.addEventListener('click', switchToEnglish);
 languageButtonToSpanish.addEventListener('click', switchToSpanish);
+
