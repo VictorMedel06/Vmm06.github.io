@@ -9,19 +9,29 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- Botón para cambiar a inglés -->
-  <button id="toEnglish" style="
-    position: fixed;
-    top: 10px;
-    left: 10px;
-    padding: 10px 15px;
-    background-color: #28A745;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    z-index: 1000;
-  ">Cambiar a Inglés</button>
+  <!-- Verificamos si no estamos en la versión inglesa -->
+  <script>
+    if (window.location.pathname === "/Vmm06.github.io/") {
+      const button = document.createElement('button');
+      button.textContent = "Cambiar a Inglés";
+      button.style.position = "fixed";
+      button.style.top = "10px";
+      button.style.left = "10px";
+      button.style.padding = "10px 15px";
+      button.style.backgroundColor = "#28A745";
+      button.style.color = "white";
+      button.style.border = "none";
+      button.style.borderRadius = "5px";
+      button.style.cursor = "pointer";
+      button.style.zIndex = "1000";
+
+      document.body.appendChild(button);
+
+      button.addEventListener('click', function() {
+        window.location.href = "/Vmm06.github.io/english/index.html";
+      });
+    }
+  </script>
 
   <header>
     <h1>Web4U</h1>
@@ -62,14 +72,6 @@
   <footer>
     <p>© Victor Medel Martin Web4U | <a href="english/index.html" title="Cambiar al inglés">English</a></p>
   </footer>
-
-  <!-- JavaScript para el botón de cambiar a inglés -->
-  <script>
-    const toEnglishButton = document.getElementById('toEnglish');
-    toEnglishButton.addEventListener('click', () => {
-      window.location.href = "english/index.html";
-    });
-  </script>
 
   <!-- Enlace a pdf.js -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
