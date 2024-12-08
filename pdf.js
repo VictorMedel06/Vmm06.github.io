@@ -1,4 +1,3 @@
-
 function downloadPageAsPDF() {
   const element = document.body; 
   const options = {
@@ -27,7 +26,8 @@ document.body.appendChild(downloadButton);
 
 downloadButton.addEventListener('click', downloadPageAsPDF);
 
-if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
+// Crear el botón de cambiar a inglés solo si estás en la página principal en español
+if (window.location.pathname === '/' || window.location.pathname === '/index.html' || window.location.pathname === '/Vmm06.github.io/') {
 
   const languageButtonToEnglish = document.createElement('button');
   languageButtonToEnglish.textContent = 'Cambiar a Inglés';
