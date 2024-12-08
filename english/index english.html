@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Web4U: Learn HTML, SVG, and CSS with examples and clear explanations.">
+  <title>Web4U - Learn HTML, SVG, and CSS</title>
+  <link rel="stylesheet" href="../style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Header with navigation -->
+  <header>
+    <h1>Web4U</h1>
+    <p>Learn HTML, SVG, and CSS with examples and resources.</p>
+    <nav>
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="HTML.html">HTML</a></li>
+        <li><a href="SVG.html">SVG</a></li>
+        <li><a href="CSS.html">CSS</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Botón para volver al español -->
+  <button id="toSpanish" style="
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    padding: 10px 15px;
+    background-color: #28A745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  ">Cambiar a Español</button>
+
+  <!-- Main section -->
+  <main>
+    
+
+    <!-- Content thumbnails -->
+    <section class="thumbnails">
+      <article>
+        <a href="HTML.html" title="Go to the HTML page">
+          <img src="../imagenes/hmtl logo.png" alt="HTML Logo">
+          <h2>HTML</h2>
+        </a>
+      </article>
+      <article>
+        <a href="SVG.html" title="Go to the SVG page">
+          <img src="../imagenes/svglogo.png" alt="SVG Logo">
+          <h2>SVG</h2>
+        </a>
+      </article>
+      <article>
+        <a href="CSS.html" title="Go to the CSS page">
+          <img src="../imagenes/csslogo2.png" alt="CSS Logo">
+          <h2>CSS</h2>
+        </a>
+      </article>
+    </section>
+  </main>
+
+  <!-- Footer with language switch option -->
+  <footer>
+    <p>© Victor Medel Martin Web4U | <a href="../index.html" title="Switch to Spanish">Español</a></p>
+  </footer>
+
+  <!-- JavaScript para el cambio de idioma -->
+  <script>
+    const toSpanishButton = document.getElementById('toSpanish');
+    
+    toSpanishButton.addEventListener('click', () => {
+      window.location.href = '../index.html';
+    });
+  </script>
+</body>
+</html>
