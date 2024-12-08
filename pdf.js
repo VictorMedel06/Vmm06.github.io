@@ -49,7 +49,7 @@ document.body.appendChild(languageButtonToEnglish);
 
 // Función para cambiar a la versión en inglés
 function switchToEnglish() {
-  window.location.href = "/english/index.html"; // Ruta actualizada para coincidir con tu estructura de carpetas
+  window.location.href = "/english/index english.html"; // Ruta actualizada para coincidir con tu estructura de carpetas
 }
 
 // Crear un botón para regresar a la versión en español
