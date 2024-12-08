@@ -1,10 +1,6 @@
-// Asegúrate de incluir la biblioteca html2pdf.js en tu proyecto.
-// Puedes añadirla con un enlace CDN:
-// <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
 
-// Función para descargar la página como PDF
 function downloadPageAsPDF() {
-  const element = document.body; // Seleccionar todo el contenido de la página
+  const element = document.body; 
   const options = {
     margin: 1,
     filename: 'pagina-web.pdf',
@@ -15,7 +11,6 @@ function downloadPageAsPDF() {
   html2pdf().set(options).from(element).save();
 }
 
-// Crear un botón de descarga PDF
 const downloadButton = document.createElement('button');
 downloadButton.textContent = 'Descargar como PDF';
 downloadButton.style.position = 'fixed';
@@ -32,9 +27,8 @@ document.body.appendChild(downloadButton);
 
 downloadButton.addEventListener('click', downloadPageAsPDF);
 
-// Comprobación para asegurarnos de que solo el botón de la izquierda se renderiza en index.html
 if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
-  // Crear el botón para cambiar a inglés en el lado izquierdo
+
   const languageButtonToEnglish = document.createElement('button');
   languageButtonToEnglish.textContent = 'Cambiar a Inglés';
   languageButtonToEnglish.style.position = 'fixed';
@@ -49,11 +43,9 @@ if (window.location.pathname === '/' || window.location.pathname === '/index.htm
   languageButtonToEnglish.style.zIndex = '1000';
   document.body.appendChild(languageButtonToEnglish);
 
-  // Función para cambiar a inglés dinámicamente
   function switchToEnglish() {
     window.location.href = "/english/index.html";
   }
 
-  // Vincular eventos
   languageButtonToEnglish.addEventListener('click', switchToEnglish);
 }
