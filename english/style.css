@@ -1,12 +1,12 @@
 body {
-    font-family: 'Roboto', sans-serif; /* Cambiado a 'Roboto' como fuente principal */
+    font-family: 'Roboto', sans-serif; 
     background-color: #f9f9f9;
     margin: 0;
     padding: 0;
 }
 
 header {
-    background-color: #007bff; /* Color de fondo del encabezado */
+    background-color: #007bff; 
     color: #fff;
     padding: 20px;
     text-align: center;
@@ -14,15 +14,15 @@ header {
 
 h1 {
     margin: 0;
-    font-size: 2.5em; /* Tamaño del título principal */
+    font-size: 2.5em; 
 }
 
 p {
-    font-size: 1.2em; /* Tamaño del texto */
+    font-size: 1.2em; 
 }
 
 nav {
-    background-color: #0056b3; /* Color de fondo del menú */
+    background-color: #0056b3; 
     padding: 10px;
 }
 
@@ -43,14 +43,14 @@ nav a:hover {
     border-radius: 5px;
 }
 
-/* Resaltar página activa */
+
 nav a.active {
     font-weight: bold;
     border-bottom: 2px solid #fff;
 }
 
 main {
-    padding: 20px; /* Espaciado interno del main */
+    padding: 20px; 
 }
 
 .featured {
@@ -62,55 +62,55 @@ main {
 
 .thumbnails {
     display: flex;
-    justify-content: space-around; /* Espaciado uniforme entre artículos */
-    flex-wrap: wrap; /* Permitir que los artículos se ajusten en varias filas */
+    justify-content: space-around; 
+    flex-wrap: wrap; 
     margin: 20px;
 }
 
 article {
-    background-color: #007bff; /* Color de fondo de los artículos */
+    background-color: #007bff;
     border: 1px solid #ddd;
-    border-radius: 10px; /* Bordes redondeados */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para un efecto de elevación */
+    border-radius: 10px; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
     text-align: center;
     margin: 10px;
     padding: 10px;
-    width: 200px; /* Ancho fijo para los artículos */
-    transition: transform 0.2s; /* Transición suave para el efecto hover */
+    width: 200px; 
+    transition: transform 0.2s; 
 }
 
 article:hover {
-    transform: scale(1.05); /* Efecto de aumento al pasar el ratón */
+    transform: scale(1.05); 
 }
 
 img {
-    max-width: 80%; /* Asegura que la imagen no exceda el ancho del artículo */
-    height: auto; /* Mantiene la proporción de la imagen */
-    margin-bottom: 10px; /* Espacio entre la imagen y el título */
+    max-width: 80%; 
+    height: auto; 
+    margin-bottom: 10px; 
 }
 
 h2 {
-    font-size: 1.5em; /* Tamaño del texto del título del artículo */
-    margin: 0; /* Eliminar margen superior */
+    font-size: 1.5em; 
+    margin: 0; 
 }
 
 h3 {
-    font-size: 1.4em; /* Tamaño del texto del título de sección */
-    margin: 10px 0; /* Margen superior e inferior */
+    font-size: 1.4em;
+    margin: 10px 0; 
 }
 
 a {
-    color: #007bff; /* Color del enlace */
-    text-decoration: none; /* Sin subrayado */
+    color: #007bff;
+    text-decoration: none; 
 }
 
 a:hover {
-    text-decoration: underline; /* Subrayado al pasar el ratón */
+    text-decoration: underline;
 }
 
-/* Estilo del pie de página */
+
 footer {
-    background-color: #0056b3; /* Fondo azul oscuro */
+    background-color: #0056b3;
     color: white;
     padding: 10px;
     text-align: center;
@@ -123,39 +123,39 @@ footer {
 footer {
     text-align: center;
     padding: 10px;
-    background-color: grey; /* Color de fondo del pie de página */
+    background-color: grey;
     color: black;
 }
 
-/* Estilos específicos para SVG */
+
 svg {
-    border: 1px solid #c5b7b7; /* Borde gris para el SVG */
-    margin-top: 10px; /* Margen superior */
-    display: block; /* Asegura que el SVG se centre */
+    border: 1px solid #c5b7b7;
+    margin-top: 10px; 
+    display: block;
 }
 
-/* Estilos para secciones */
+
 section {
-    background-color: #ccd0ec; /* Fondo blanco para secciones */
+    background-color: #ccd0ec;
     border-radius: 5px;
     padding: 15px;
     margin: 10px 0;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
-/* Estilos para los ejemplos prácticos de SVG */
+
 .svg-example {
-    border: 2px solid #007bff; /* Borde azul para los ejemplos */
+    border: 2px solid #007bff;
     border-radius: 5px;
     padding: 15px;
 }
 
-/* Estilos para los recuadros de ejemplos */
+
 .example-box {
-    border: 2px solid #ff0202; /* Borde azul */
-    border-radius: 5px; /* Bordes redondeados */
-    padding: 15px; /* Espaciado interno */
-    margin: 10px 0; /* Margen superior e inferior */
-    background-color: #84bcf3; /* Fondo claro para los ejemplos */
-    box-shadow: 0 1px 3px rgba(209, 51, 51, 0.1); /* Sombra sutil */
+    border: 2px solid #ff0202;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 10px 0;
+    background-color: #84bcf3;
+    box-shadow: 0 1px 3px rgba(209, 51, 51, 0.1);
 }
