@@ -27,15 +27,19 @@ document.body.appendChild(downloadButton);
 
 downloadButton.addEventListener('click', downloadPageAsPDF);
 
-// Crear botón de cambiar a inglés, solo si estás en la página principal en español
+// Lógica para mostrar el botón de "Cambiar a Inglés"
 document.addEventListener('DOMContentLoaded', function () {
   const currentPath = window.location.pathname;
 
+  console.log('Ruta actual:', currentPath); // Depuración
+
   if (
-    currentPath === '/' ||
-    currentPath === '/Vmm06.github.io/' ||
+    currentPath === '/' || 
+    currentPath === '/Vmm06.github.io/' || 
     currentPath === '/Vmm06.github.io/index.html'
   ) {
+    console.log('Ejecutando lógica para crear botón');
+    
     const languageButtonToEnglish = document.createElement('button');
     languageButtonToEnglish.textContent = 'Cambiar a Inglés';
     languageButtonToEnglish.style.position = 'fixed';
@@ -52,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function () {
     document.body.appendChild(languageButtonToEnglish);
 
     function switchToEnglish() {
-      window.location.href = "/english/index.html";
+      window.location.href = "/Vmm06.github.io/english/index.html";
     }
 
     languageButtonToEnglish.addEventListener('click', switchToEnglish);
