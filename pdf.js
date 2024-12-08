@@ -49,20 +49,7 @@ function switchToEnglish() {
   window.location.href = `${basePath}/english/index.html`;
 }
 
-// Crear botón para volver a español
-const languageButtonToSpanish = document.createElement('button');
-languageButtonToSpanish.textContent = 'Regresar a Español';
-languageButtonToSpanish.style.position = 'fixed';
-languageButtonToSpanish.style.top = '100px';
-languageButtonToSpanish.style.right = '10px';
-languageButtonToSpanish.style.padding = '10px 15px';
-languageButtonToSpanish.style.backgroundColor = '#FF0000';
-languageButtonToSpanish.style.color = 'white';
-languageButtonToSpanish.style.border = 'none';
-languageButtonToSpanish.style.borderRadius = '5px';
-languageButtonToSpanish.style.cursor = 'pointer';
-languageButtonToSpanish.style.zIndex = '1000';
-document.body.appendChild(languageButtonToSpanish);
+
 
 // Función para regresar a español dinámicamente
 function switchToSpanish() {
