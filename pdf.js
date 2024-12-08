@@ -34,12 +34,12 @@ if (window.location.pathname === '/index.html' || window.location.pathname === '
 
   downloadButton.addEventListener('click', downloadPageAsPDF);
 
-  // Crear botón para cambiar a inglés
+  // Crear el botón para cambiar a inglés en el lado izquierdo
   const languageButtonToEnglish = document.createElement('button');
   languageButtonToEnglish.textContent = 'Cambiar a Inglés';
   languageButtonToEnglish.style.position = 'fixed';
-  languageButtonToEnglish.style.top = '50px';
-  languageButtonToEnglish.style.right = '10px';
+  languageButtonToEnglish.style.top = '10px';
+  languageButtonToEnglish.style.left = '10px';
   languageButtonToEnglish.style.padding = '10px 15px';
   languageButtonToEnglish.style.backgroundColor = '#28A745';
   languageButtonToEnglish.style.color = 'white';
@@ -51,11 +51,9 @@ if (window.location.pathname === '/index.html' || window.location.pathname === '
 
   // Función para cambiar a inglés dinámicamente
   function switchToEnglish() {
-    const basePath = window.location.origin + window.location.pathname.split('/')[1];
-    window.location.href = `${basePath}/english/index.html`;
+    window.location.href = "/english/index.html";
   }
 
   // Vincular eventos
   languageButtonToEnglish.addEventListener('click', switchToEnglish);
 }
-
