@@ -1,5 +1,5 @@
 function downloadPageAsPDF() {
-  const element = document.body;
+  const element = document.body; 
   const options = {
     margin: 1,
     filename: 'pagina-web.pdf',
@@ -27,38 +27,34 @@ document.body.appendChild(downloadButton);
 
 downloadButton.addEventListener('click', downloadPageAsPDF);
 
-// Lógica para mostrar el botón de "Cambiar a Inglés"
+// Función para crear el botón de Cambiar a Inglés
 document.addEventListener('DOMContentLoaded', function () {
   const currentPath = window.location.pathname;
 
-  console.log('Ruta actual:', currentPath); // Depuración
+  console.log('Ruta actual:', currentPath); // Para depurar
 
   if (
     currentPath === '/' || 
-    currentPath === '/Vmm06.github.io/' || 
+    currentPath === '/Vmm06.github.io/' ||
     currentPath === '/Vmm06.github.io/index.html'
   ) {
-    console.log('Ejecutando lógica para crear botón');
-    
-    const languageButtonToEnglish = document.createElement('button');
-    languageButtonToEnglish.textContent = 'Cambiar a Inglés';
-    languageButtonToEnglish.style.position = 'fixed';
-    languageButtonToEnglish.style.top = '10px';
-    languageButtonToEnglish.style.left = '10px';
-    languageButtonToEnglish.style.padding = '10px 15px';
-    languageButtonToEnglish.style.backgroundColor = '#28A745';
-    languageButtonToEnglish.style.color = 'white';
-    languageButtonToEnglish.style.border = 'none';
-    languageButtonToEnglish.style.borderRadius = '5px';
-    languageButtonToEnglish.style.cursor = 'pointer';
-    languageButtonToEnglish.style.zIndex = '1000';
+    const englishButton = document.createElement('button');
+    englishButton.textContent = 'Cambiar a Inglés';
+    englishButton.style.position = 'fixed';
+    englishButton.style.top = '10px';
+    englishButton.style.left = '10px';
+    englishButton.style.padding = '10px 15px';
+    englishButton.style.backgroundColor = '#28A745';
+    englishButton.style.color = 'white';
+    englishButton.style.border = 'none';
+    englishButton.style.borderRadius = '5px';
+    englishButton.style.cursor = 'pointer';
+    englishButton.style.zIndex = '1000';
 
-    document.body.appendChild(languageButtonToEnglish);
+    document.body.appendChild(englishButton);
 
-    function switchToEnglish() {
+    englishButton.addEventListener('click', function () {
       window.location.href = "/Vmm06.github.io/english/index.html";
-    }
-
-    languageButtonToEnglish.addEventListener('click', switchToEnglish);
+    });
   }
 });
