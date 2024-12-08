@@ -30,10 +30,9 @@ downloadButton.style.cursor = 'pointer';
 downloadButton.style.zIndex = '1000';
 document.body.appendChild(downloadButton);
 
-// Vincular el botón con la funcionalidad para descargar el PDF
 downloadButton.addEventListener('click', downloadPageAsPDF);
 
-// Crear un botón para cambiar el idioma a inglés
+// Crear un botón para cambiar a la versión en inglés
 const languageButtonToEnglish = document.createElement('button');
 languageButtonToEnglish.textContent = 'Cambiar a Inglés';
 languageButtonToEnglish.style.position = 'fixed';
@@ -48,10 +47,33 @@ languageButtonToEnglish.style.cursor = 'pointer';
 languageButtonToEnglish.style.zIndex = '1000';
 document.body.appendChild(languageButtonToEnglish);
 
-// Función para cambiar la página a la versión en inglés
+// Función para cambiar a la versión en inglés
 function switchToEnglish() {
-  window.location.href = "./english/index%20english.html";
+  // Codificando el espacio correctamente para GitHub Pages
+  window.location.href = "/english/index%20english.html";
 }
 
-// Vincular el botón con la acción de cambio de idioma
+// Crear un botón para regresar a la versión en español
+const languageButtonToSpanish = document.createElement('button');
+languageButtonToSpanish.textContent = 'Regresar a Español';
+languageButtonToSpanish.style.position = 'fixed';
+languageButtonToSpanish.style.top = '100px';
+languageButtonToSpanish.style.right = '10px';
+languageButtonToSpanish.style.padding = '10px 15px';
+languageButtonToSpanish.style.backgroundColor = '#FF0000';
+languageButtonToSpanish.style.color = 'white';
+languageButtonToSpanish.style.border = 'none';
+languageButtonToSpanish.style.borderRadius = '5px';
+languageButtonToSpanish.style.cursor = 'pointer';
+languageButtonToSpanish.style.zIndex = '1000';
+document.body.appendChild(languageButtonToSpanish);
+
+// Función para regresar a la versión en español
+function switchToSpanish() {
+  window.location.href = "/index.html";
+}
+
+// Vincular los botones con sus acciones correspondientes
 languageButtonToEnglish.addEventListener('click', switchToEnglish);
+languageButtonToSpanish.addEventListener('click', switchToSpanish);
+
