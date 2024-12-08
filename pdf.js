@@ -4,15 +4,15 @@
 
 // Función para descargar la página como PDF
 function downloadPageAsPDF() {
-    const element = document.body; // Seleccionar todo el contenido de la página
-    const options = {
-        margin: 1,
-        filename: 'pagina-web.pdf',
-        image: { type: 'jpeg', quality: 0.98 },
-        html2canvas: { scale: 2 },
-        jsPDF: { unit: 'cm', format: 'a4', orientation: 'portrait' }
-    };
-    html2pdf().set(options).from(element).save();
+  const element = document.body; // Seleccionar todo el contenido de la página
+  const options = {
+    margin: 1,
+    filename: 'pagina-web.pdf',
+    image: { type: 'jpeg', quality: 0.98 },
+    html2canvas: { scale: 2 },
+    jsPDF: { unit: 'cm', format: 'a4', orientation: 'portrait' }
+  };
+  html2pdf().set(options).from(element).save();
 }
 
 // Crear un botón de descarga PDF
@@ -32,32 +32,47 @@ document.body.appendChild(downloadButton);
 
 downloadButton.addEventListener('click', downloadPageAsPDF);
 
-// Crear un botón para cambiar idioma
-const languageButton = document.createElement('button');
-languageButton.textContent = 'Cambiar a Inglés';
-languageButton.style.position = 'fixed';
-languageButton.style.top = '10px';
-languageButton.style.left = '10px';
-languageButton.style.padding = '10px 15px';
-languageButton.style.backgroundColor = '#28A745';
-languageButton.style.color = 'white';
-languageButton.style.border = 'none';
-languageButton.style.borderRadius = '5px';
-languageButton.style.cursor = 'pointer';
-languageButton.style.zIndex = '1000';
-document.body.appendChild(languageButton);
+// Crear un botón para cambiar a la versión en inglés
+const languageButtonToEnglish = document.createElement('button');
+languageButtonToEnglish.textContent = 'Cambiar a Inglés';
+languageButtonToEnglish.style.position = 'fixed';
+languageButtonToEnglish.style.top = '10px';
+languageButtonToEnglish.style.left = '10px';
+languageButtonToEnglish.style.padding = '10px 15px';
+languageButtonToEnglish.style.backgroundColor = '#28A745';
+languageButtonToEnglish.style.color = 'white';
+languageButtonToEnglish.style.border = 'none';
+languageButtonToEnglish.style.borderRadius = '5px';
+languageButtonToEnglish.style.cursor = 'pointer';
+languageButtonToEnglish.style.zIndex = '1000';
+document.body.appendChild(languageButtonToEnglish);
 
-// Función para cambiar el idioma de la página
+// Función para cambiar a la versión en inglés
 function switchToEnglish() {
-  window.location.href = "/english/index english.html"; // Ruta correcta al archivo traducido
+  window.location.href = "/en/index.html"; // Ruta correcta al archivo en inglés
 }
 
+// Crear un botón para regresar a la versión en español
+const languageButtonToSpanish = document.createElement('button');
+languageButtonToSpanish.textContent = 'Cambiar a Español';
+languageButtonToSpanish.style.position = 'fixed';
+languageButtonToSpanish.style.top = '50px';
+languageButtonToSpanish.style.left = '10px';
+languageButtonToSpanish.style.padding = '10px 15px';
+languageButtonToSpanish.style.backgroundColor = '#FF0000';
+languageButtonToSpanish.style.color = 'white';
+languageButtonToSpanish.style.border = 'none';
+languageButtonToSpanish.style.borderRadius = '5px';
+languageButtonToSpanish.style.cursor = 'pointer';
+languageButtonToSpanish.style.zIndex = '1000';
+document.body.appendChild(languageButtonToSpanish);
+
+// Función para regresar a la versión en español
 function switchToSpanish() {
   window.location.href = "/index.html"; // Ruta de la versión en español
 }
 
-languageButton.addEventListener('click', switchToEnglish);
+// Vincular los botones con sus funciones
+languageButtonToEnglish.addEventListener('click', switchToEnglish);
+languageButtonToSpanish.addEventListener('click', switchToSpanish);
 
-
-
-backToSpanishButton.addEventListener('click', switchToSpanish);
