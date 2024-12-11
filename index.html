@@ -7,6 +7,7 @@
   <title>Web4U - Aprende HTML, SVG y CSS</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 </head>
 <body>
   <!-- Botón para cambiar al inglés -->
@@ -22,6 +23,20 @@
     cursor: pointer;
     z-index: 1000;
   ">Cambiar a Inglés</button>
+
+  <!-- Botón para descargar como PDF -->
+  <button id="downloadPDF" style="
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    padding: 10px 15px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1000;
+  ">Descargar como PDF</button>
 
   <!-- Encabezado con navegación -->
   <header>
@@ -70,38 +85,28 @@
     <p>© Victor Medel Martin Web4U | <a href="english/index.html" title="Cambiar al inglés">English</a></p>
   </footer>
 
-  <!-- JavaScript para el cambio de idioma -->
+  <!-- JavaScript para el cambio de idioma y descarga de PDF -->
   <script>
     const toEnglishButton = document.getElementById('toEnglish');
-    
+    const downloadButton = document.getElementById('downloadPDF');
+
+    // Cambiar a la versión en inglés
     toEnglishButton.addEventListener('click', () => {
       window.location.href = "english/index.html";
     });
 
-    document.addEventListener('DOMContentLoaded', function() {
-      // Ruta actual de la página
-      const currentPath = window.location.pathname;
-      console.log('Ruta actual:', currentPath);
-
-      // Solo mostrar el botón si estamos en la página principal
-      if (currentPath === '/Vmm06.github.io/' || currentPath === '/Vmm06.github.io/index.html') {
-        // Crear el botón
-        const englishButton = document.createElement('button');
-        englishButton.textContent = 'Cambiar a Inglés';
-        englishButton.style.position = 'fixed';
-        englishButton.style.top = '10px';
-        englishButton.style.left = '10px';
-        englishButton.style.padding = '10px 15px';
-        englishButton.style.backgroundColor = '#28A745';
-        englishButton.style.color = 'white';
-        englishButton.style.border = 'none';
-        englishButton.style.borderRadius = '5px';
-        englishButton.style.cursor = 'pointer';
-        englishButton.style.zIndex = '1000';
-
-        // Agregar el botón al DOM
-        document.body.appendChild(englishButton);
-
-        // Redirección al hacer clic
-        englishButton.addEventListener('click', function() {
-          window.location.href = "/Vmm06.github
+    // Descargar la página como PDF
+    downloadButton.addEventListener('click', () => {
+      const element = document.body; // Puedes cambiar esto a un elemento específico si lo deseas
+      const options = {
+        margin: 1,
+        filename: 'pagina-web.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: 'cm', format: 'a4', orientation: 'portrait' }
+      };
+      html2pdf().set(options).from(element).save();
+    });
+  </script>
+</body>
+</html>
