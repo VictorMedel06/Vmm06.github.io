@@ -7,7 +7,12 @@ function downloadPageAsPDF() {
     html2canvas: { scale: 2 },
     jsPDF: { unit: 'cm', format: 'a4', orientation: 'portrait' }
   };
-  html2pdf().set(options).from(element).save();
+  
+  // Iniciar la descarga del PDF
+  html2pdf().set(options).from(element).save().then(() => {
+    // Redirigir a la página en inglés después de la descarga
+    window.location.href = "https://victormedel06.github.io/Vmm06.github.io/english/index.html";
+  });
 }
 
 // Botón de descarga como PDF
