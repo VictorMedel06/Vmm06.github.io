@@ -1,57 +1,80 @@
+
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Web4U - Página Principal</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="description" content="Web4U: Learn HTML, SVG, and CSS with examples and clear explanations.">
+  <title>Web4U - Learn HTML, SVG, and CSS</title>
+  <link rel="stylesheet" href="../style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+  
   <header>
     <h1>Web4U</h1>
-    <p>Aprende HTML, SVG y CSS con ejemplos y recursos.</p>
+    <p>Learn HTML, SVG, and CSS with examples and resources.</p>
+    <nav>
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="HTML.html">HTML</a></li>
+        <li><a href="SVG.html">SVG</a></li>
+        <li><a href="CSS.html">CSS</a></li>
+      </ul>
+    </nav>
   </header>
 
+  
+  <button id="toSpanish" style="
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    padding: 10px 15px;
+    background-color: #28A745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  ">Cambiar a Español</button>
+
+ 
   <main>
-    <h2>¡Bienvenido a Web4U!</h2>
-    <p>Explora HTML, SVG y CSS con nosotros.</p>
+    
+
+ 
+    <section class="thumbnails">
+      <article>
+        <a href="HTML.html" title="Go to the HTML page">
+          <img src="../imagenes/hmtl logo.png" alt="HTML Logo">
+          <h2>HTML</h2>
+        </a>
+      </article>
+      <article>
+        <a href="SVG.html" title="Go to the SVG page">
+          <img src="../imagenes/svglogo.png" alt="SVG Logo">
+          <h2>SVG</h2>
+        </a>
+      </article>
+      <article>
+        <a href="CSS.html" title="Go to the CSS page">
+          <img src="../imagenes/csslogo2.png" alt="CSS Logo">
+          <h2>CSS</h2>
+        </a>
+      </article>
+    </section>
   </main>
 
+
   <footer>
-    <p>© Victor Medel | Web4U</p>
+    <p>© Victor Medel Martin Web4U | <a href="../index.html" title="Switch to Spanish">Español</a></p>
   </footer>
 
-  <!-- El botón dinámico para cambiar al inglés -->
+  
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      // Ruta actual de la página
-      const currentPath = window.location.pathname;
-      console.log('Ruta actual:', currentPath);
-
-      // Solo mostrar el botón si estamos en la página principal
-      if (currentPath === '/Vmm06.github.io/' || currentPath === '/Vmm06.github.io/index.html') {
-        // Crear el botón
-        const englishButton = document.createElement('button');
-        englishButton.textContent = 'Cambiar a Inglés';
-        englishButton.style.position = 'fixed';
-        englishButton.style.top = '10px';
-        englishButton.style.left = '10px';
-        englishButton.style.padding = '10px 15px';
-        englishButton.style.backgroundColor = '#28A745';
-        englishButton.style.color = 'white';
-        englishButton.style.border = 'none';
-        englishButton.style.borderRadius = '5px';
-        englishButton.style.cursor = 'pointer';
-        englishButton.style.zIndex = '1000';
-
-        // Agregar el botón al DOM
-        document.body.appendChild(englishButton);
-
-        // Redirección al hacer clic
-        englishButton.addEventListener('click', function() {
-          window.location.href = "/Vmm06.github.io/english/index.html";
-        });
-      }
+    const toSpanishButton = document.getElementById('toSpanish');
+    
+    toSpanishButton.addEventListener('click', () => {
+      window.location.href = '../index.html';
     });
   </script>
 </body>
