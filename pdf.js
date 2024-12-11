@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function () {
     document.body.appendChild(englishButton);
 
     englishButton.addEventListener('click', function () {
-      window.location.href = "/Vmm06.github.io/english/index.html";
+      window.location.href = "https://victormedel06.github.io/Vmm06.github.io/english/index.html";
     });
   }
 });
