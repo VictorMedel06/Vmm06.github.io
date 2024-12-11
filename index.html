@@ -3,26 +3,81 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Web4U - Página Principal</title>
+  <meta name="description" content="Web4U: Aprende HTML, SVG y CSS con ejemplos y explicaciones claras.">
+  <title>Web4U - Aprende HTML, SVG y CSS</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+  <!-- Botón para cambiar al inglés -->
+  <button id="toEnglish" style="
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    padding: 10px 15px;
+    background-color: #28A745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1000;
+  ">Cambiar a Inglés</button>
+
+  <!-- Encabezado con navegación -->
   <header>
     <h1>Web4U</h1>
     <p>Aprende HTML, SVG y CSS con ejemplos y recursos.</p>
+    <nav>
+      <ul>
+        <li><a href="index.html" class="active">Inicio</a></li>
+        <li><a href="HTML.html">HTML</a></li>
+        <li><a href="SVG.html">SVG</a></li>
+        <li><a href="CSS.html">CSS</a></li>
+      </ul>
+    </nav>
   </header>
 
+  <!-- Sección principal -->
   <main>
     <h2>¡Bienvenido a Web4U!</h2>
     <p>Explora HTML, SVG y CSS con nosotros.</p>
+    
+    <!-- Miniaturas de contenido -->
+    <section class="thumbnails">
+      <article>
+        <a href="HTML.html" title="Ir a la página de HTML">
+          <img src="imagenes/hmtl logo.png" alt="Logo de HTML">
+          <h2>HTML</h2>
+        </a>
+      </article>
+      <article>
+        <a href="SVG.html" title="Ir a la página de SVG">
+          <img src="imagenes/svglogo.png" alt="Logo de SVG">
+          <h2>SVG</h2>
+        </a>
+      </article>
+      <article>
+        <a href="CSS.html" title="Ir a la página de CSS">
+          <img src="imagenes/csslogo2.png" alt="Logo de CSS">
+          <h2>CSS</h2>
+        </a>
+      </article>
+    </section>
   </main>
 
+  <!-- Pie de página con opción de cambiar idioma -->
   <footer>
-    <p>© Victor Medel | Web4U</p>
+    <p>© Victor Medel Martin Web4U | <a href="english/index.html" title="Cambiar al inglés">English</a></p>
   </footer>
 
-  <!-- El botón dinámico para cambiar al inglés -->
+  <!-- JavaScript para el cambio de idioma -->
   <script>
+    const toEnglishButton = document.getElementById('toEnglish');
+    
+    toEnglishButton.addEventListener('click', () => {
+      window.location.href = "english/index.html";
+    });
+
     document.addEventListener('DOMContentLoaded', function() {
       // Ruta actual de la página
       const currentPath = window.location.pathname;
@@ -53,7 +108,3 @@
         });
       }
     });
-  </script>
-</body>
-</html>
-
